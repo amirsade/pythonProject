@@ -19,8 +19,8 @@ manual_string = '''
 choose your item_number in least: 
 '''
 choose_user = input(manual_string)
-working = True
-while working:
+working = False
+while not working:
     if choose_user == '1':
         f_name, l_name, u_name, email_p, pass_p, phone_p, wallet_p = input('''Hi please enter identity customers example: 
         amir,vafadar,amir195,amirsade999@gmail.com,password,phone,120000
@@ -66,7 +66,7 @@ while working:
         log.log(log.ERROR, 'You choose a different character!')
     continue_working = input('If you done enter Q: ').lower()
     if continue_working == 'q':
-        working = False
+        working = True
     else:
         choose_user = input(manual_string)
 
