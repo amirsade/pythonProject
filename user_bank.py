@@ -41,25 +41,25 @@ class Users:
         super().__init__(*args)
 
     def register_person(self):
-        dict_of_people[f'{self.user_name}'] = {'first_name': self.first_name, 'last_name': self.last_name,
-                                               'email_person': self.email_person,
-                                               'password_person': self.pass_person,
-                                               'phone_person': self.phone_person,
-                                               'wallet_person': self.wallet_person}
+        dict_of_people[f'{self.user_name}'] = {'First_name': self.first_name, 'Last_name': self.last_name,
+                                               'Email_person': self.email_person,
+                                               'Password_person': self.pass_person,
+                                               'Phone_person': self.phone_person,
+                                               'Wallet_person': self.wallet_person}
 
     @staticmethod
     def change_password_person(user_name: str, new_pass: str):
         if not dict_of_people[user_name]:
             log.log(log.ERROR, 'Your user_name not Exists! you must Sign up!')
         else:
-            dict_of_people[user_name]['password_person'] = new_pass
+            dict_of_people[user_name]['Password_person'] = new_pass
 
     @staticmethod
     def change_email_person(user_name: str, new_email: str):
         if not dict_of_people[user_name]:
             log.log(log.ERROR, 'Your user_name not Exists! you must Sign up!')
         else:
-            dict_of_people[user_name]['password_person'] = new_email
+            dict_of_people[user_name]['Email_person'] = new_email
 
     @staticmethod
     def change_user_name(old_user_name: str, new_user_name: str):
@@ -71,16 +71,16 @@ class Users:
 
     @staticmethod
     def deposit_money(user_name: str, increase_wallet: int):
-        wallet = dict_of_people[user_name]['wallet_person']
+        wallet = dict_of_people[user_name]['Wallet_person']
         wallet += increase_wallet
-        dict_of_people[user_name]['wallet_person'] = wallet
+        dict_of_people[user_name]['Wallet_person'] = wallet
 
     @staticmethod
     def transfer_money(user_name: str, pay: int):
-        wallet = dict_of_people[user_name]['wallet_person']
+        wallet = dict_of_people[user_name]['Wallet_person']
         if wallet > pay:
             wallet -= pay
-            dict_of_people[user_name]['wallet_person'] = wallet
+            dict_of_people[user_name]['Wallet_person'] = wallet
         else:
             log.log(log.ERROR, 'Your wallet is less than your payment!')
 

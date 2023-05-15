@@ -30,6 +30,7 @@ while not working:
         pass_p = password_normalize(pass_p)
         wallet_p = int(wallet_p)
         user = Users(f_name, l_name, u_name, email_p, pass_p, phone_p, wallet_p)
+        user.register_person()
 
     elif choose_user == '2':
         print(dict_of_people)
