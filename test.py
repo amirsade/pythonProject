@@ -27,7 +27,7 @@ class UserTest(test.TestCase):
         dict_test[user_name]['Password_person'] = new_password
         self.user1.register_person()
         self.user1.change_password_person(user_name, new_password)
-        self.assertAlmostEqual(user_bank.dict_of_people, dict_test)
+        self.assertEqual(user_bank.dict_of_people, dict_test)
 
     def test_change_email(self):
         new_email = 'amirvafadar195@gmail.com'
@@ -64,4 +64,3 @@ class UserTest(test.TestCase):
 
 if __name__ == '__main__':
     pass
-

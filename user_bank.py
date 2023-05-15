@@ -97,8 +97,3 @@ class Users:
         else:
             with open(filename, 'a') as f:
                 json.dump(dict_of_people, f)
-
-
-
-
-

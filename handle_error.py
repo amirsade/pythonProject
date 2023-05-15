@@ -21,12 +21,14 @@ class EmailError(NormalizeError):
 class PasswordError(NormalizeError):
 
     def __init__(self, password: str, *args: object) -> None:
+        self.password = password
         super().__init__(*args)
 
 
 class WalletError(NormalizeError):
 
     def __init__(self, wallet: int, *args: object) -> None:
+        self.wallet = wallet
         super().__init__(*args)
 
 

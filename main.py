@@ -70,5 +70,3 @@ while not working:
         working = True
     else:
         choose_user = input(manual_string)
-
-
