@@ -1,8 +1,8 @@
 import user_bank
-import logging as log
-import os
 import unittest as test
-import json
+# import logging as log
+# import os
+# import json
 
 
 FILE_TEST = 'Customer_test.json'
