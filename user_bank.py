@@ -24,6 +24,7 @@ log.basicConfig(format=log_format, level=log.DEBUG)
 # '''
 dict_of_people = {}
 filename = 'Customers.json'
+phone_persons = []
 
 
 class Users:
@@ -41,11 +42,15 @@ class Users:
         super().__init__(*args)
 
     def register_person(self):
-        dict_of_people[f'{self.user_name}'] = {'First_name': self.first_name, 'Last_name': self.last_name,
-                                               'Email_person': self.email_person,
-                                               'Password_person': self.pass_person,
-                                               'Phone_person': self.phone_person,
-                                               'Wallet_person': self.wallet_person}
+        if self.phone_person not in phone_persons:
+            dict_of_people[f'{self.user_name}'] = {'First_name': self.first_name, 'Last_name': self.last_name,
+                                                   'Email_person': self.email_person,
+                                                   'Password_person': self.pass_person,
+                                                   'Phone_person': self.phone_person,
+                                                   'Wallet_person': self.wallet_person}
+            phone_persons.append(self.phone_person)
+        else:
+            log.log(log.ERROR, 'ERROR, you enter phone already exists!')
 
     @staticmethod
     def change_password_person(user_name: str, new_pass: str):
